@@ -1,0 +1,142 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #a2b2ff; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a23; 
+    background-image: url('img/Mask\ group.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container Principal (O card escuro) - Estilo Mobile (Padrão) */
+.container {
+    
+    width: 90vw; /* Ocupa a maior parte da largura no mobile */
+    min-height: 80vh; /* Altura mínima para não achatar no mobile */
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column; /* Itens empilhados no mobile */
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* Estilo da Branding (Logo e Texto) - Mobile */
+.logo {
+    width: 140px;
+    margin-bottom: 40px;
+}
+
+.branding-text h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.branding-text p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Estilo do Card do Formulário (O retângulo claro) */
+.login-card {
+    background-color: #ffe4e1;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px; /* Limita o tamanho do formulário */
+    margin: 0 auto; /* Centraliza no mobile */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-login {
+    background-color: #2b59ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- MEDIA QUERY PARA TELA GRANDE (DESKTOP) --- */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row; /* Lado a lado no desktop */
+        align-items: center;
+        justify-content: space-between; /* Texto à esquerda, form à direita */
+        
+        /* CORREÇÃO DO ESPAÇAMENTO VAZIO: */
+        height: auto; /* Remove altura fixa */
+        min-height: auto; /* Remove a altura mínima do mobile */
+        padding: 80px 100px; 
+        
+        max-width: 1200px; 
+    }
+
+    .branding {
+        width: 45%;
+    }
+
+    .branding-text h1 {
+        font-size: 56px; 
+        
+    }
+
+    .form-section {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end; /* Garante que o form encoste na direita */
+    }
+
+    .login-card {
+        margin: 0; /* Remove a centralização automática do mobile */
+        width: 400px; /* Largura fixa do form no desktop */
+    }
+
+    .form-footer {
+        flex-direction: row; /* Texto e botão lado a lado */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-login {
+        padding: 12px 40px;
+    }
+}
